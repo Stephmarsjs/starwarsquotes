@@ -1,0 +1,25 @@
+{
+  "name": "starwarsquotes",
+  "version": "1.0.0",
+  "description": "CRUD application using MongoDB and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Stephmarsjs/starwarsquotes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stephmarsjs/starwarsquotes/issues"
+  },
+  "homepage": "https://github.com/Stephmarsjs/starwarsquotes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
