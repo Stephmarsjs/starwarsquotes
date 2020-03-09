@@ -11,10 +11,11 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
-app.get('/', (req,res) => {
-    const crusor = db.collection('quotes').find().toArray(function(err, results)
-    {
-        console.log(results)
+app.get('/', (req, res) => {
+    db.collection('quotes').find().toArray((err, result) => {
+        if (err) return console.log(err)
+        // renders index.ejs
+        res.render('index.ejs', {quotes: result})
     })
 })
 
