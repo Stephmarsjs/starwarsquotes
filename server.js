@@ -3,10 +3,6 @@ const bodyParser = require('body-parser')
 const app = express();
 const MongoClient = require('mongodb').MongoClient
 
-MongoClient.connect('link-to-mongodb', (err, databse) => {
-    // start the server
-})
-
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
@@ -17,6 +13,13 @@ app.post('/quotes', (req, res) => {
     console.log(req.body)
 })
 
-app.listen(3000, function() {
+var db 
+
+MongoClient.connect('mongodb+srv://<username here>:<password here>@starwarscluster-19fwm.mongodb.net/test?retryWrites=true&w=majority', (err, client) => {
+    if (err) return console.log(err)
+    db = client.db('starwarscluster') // whatever your database name is
+
+app.listen(3000, () => {
     console.log('Listening on 3000')
+  })
 })
