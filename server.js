@@ -7,7 +7,7 @@ api = require('./routes/api')
 
 var db 
 
-MongoClient.connect('mongodb+srv://stephmarsjs:Franklin1223@starwarscluster-19fwm.mongodb.net/test?retryWrites=true&w=majority',
+MongoClient.connect('mongodb+srv://<>:<>@starwarscluster-19fwm.mongodb.net/test?retryWrites=true&w=majority',
 { useUnifiedTopology: true }, (err, client) => {
     if (err) return console.log(err)
     db = client.db('starwarscluster') // whatever your database name is
