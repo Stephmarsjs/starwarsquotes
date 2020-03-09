@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
+app.get('/', (req,res) => {
+    const crusor = db.collection('quotes').find()
+})
+
 app.post('/quotes', (req, res) => {
     db.collection('quotes').insertOne(req.body, (err, result) => 
     {
@@ -21,7 +25,8 @@ app.post('/quotes', (req, res) => {
 
 var db 
 
-MongoClient.connect('mongodb+srv://<username here>:<password here>@starwarscluster-19fwm.mongodb.net/test?retryWrites=true&w=majority', (err, client) => {
+MongoClient.connect('mongodb+srv://<blank>:<password>@starwarscluster-19fwm.mongodb.net/test?retryWrites=true&w=majority',
+{ useUnifiedTopology: true }, (err, client) => {
     if (err) return console.log(err)
     db = client.db('starwarscluster') // whatever your database name is
 
