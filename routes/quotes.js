@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const MongoClient = require('mongodb').MongoClient
+// const routes = require('./quotes');
+// const api = require('./quotes/api')
 
 app.use(bodyParser.urlencoded({extended: true}))
 
